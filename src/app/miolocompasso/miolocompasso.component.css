@@ -1,0 +1,11 @@
+section.container {
+    max-width: 72rem;
+    margin: 0 auto;
+    background-color: #fff;
+    padding: 1em 1em 2em;
+}
+
+section .container__list-pokemon {
+    display: contents;
+    width: 100%;
+}

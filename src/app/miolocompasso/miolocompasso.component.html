@@ -1,0 +1,19 @@
+<section class="container">
+  <div *ngIf="dadosAPI !== undefined && dadosAPI.results !== undefined && dadosAPI.results.length > 0">
+    <div class="row">
+        <div class="col-xs-12 container__list-pokemon">
+          <app-rowcompasso *ngFor="let x of dadosAPI.results; let i = index;" [name]="x.name "[url]="x.url" [id]="i+1+currentPage">
+          </app-rowcompasso>
+        </div>
+    </div>
+
+    <p>
+      <button *ngIf="dadosAPI.previous !== null && dadosAPI.previous !== '' " (click)="navegaEntrePaginas(dadosAPI.previous)">Anterior</button>
+      <button *ngIf="dadosAPI.next !== null && dadosAPI.next !== '' " (click)="navegaEntrePaginas(dadosAPI.next)">Proximo</button>
+    </p>
+  </div>
+  <button (click)="cadastraUser()"> Cadastra User</button>
+  <div *ngIf="!(dadosAPI !== undefined && dadosAPI.results !== undefined && dadosAPI.results.length > 0)">
+      Sem dados
+  </div>
+</section>
